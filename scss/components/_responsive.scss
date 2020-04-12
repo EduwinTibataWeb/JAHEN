@@ -1,0 +1,148 @@
+@media screen and (max-width: 1000px){
+    .cont-proyecto figure{
+        width: 50%;
+    }
+    .cont-proyecto div{
+        width: 50%;
+    }
+    .cont-proyecto div:last-child{
+        width: 100%;
+    }
+    .cont-teaser video{
+        padding-top: 2em;
+        width: 100%;
+    }
+    .img-person img{
+        width: 100%;
+    }
+    .biblia{
+        overflow: hidden;
+    }
+    .cont-all-biblia,.cont-descarga{
+        width: 100%;
+    }
+    .book-content{
+        justify-content: center;
+        transform: translateX(0px);
+    }
+    .trnsf{
+        transform: translateX(120px);
+    }
+}
+@media screen and (max-width: 770px){
+    .play{
+        top: 80%;
+        left: 50%;
+        right: 50%;
+        bottom: 10%;
+    }
+    .left{
+        left: .1em;
+    }
+    .right{
+        right: .1em;
+    }
+    .personas{
+        width: 300px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .info-ficha{
+        padding: 3em 15%;
+        background: linear-gradient(180deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0) 100%);
+        h1{
+            font-size: 3em;
+        }
+    }
+    .icon{
+        display: block;
+    }
+    nav{
+        flex-direction: column;
+        background-color: #000000;
+    }
+    .menu{
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 2em;
+        transition: all 1s ease-in-out;
+        ul{
+            flex-direction: column;
+            align-items: center;
+            li a{
+                color: #ffffff;
+            }
+        }
+    }
+    .active{
+        max-height: 500px;
+        padding: 2em 0;
+    }
+    .parte1,
+    .parte2,
+    .parte3{
+        width: 100%;
+    }
+    .section2{
+        flex-direction: column;
+    }
+    .img-grupo,
+    .info-grupo{
+        width: 100%;
+    }
+    .img-grupo img{
+        width: 100%;
+    }
+    .info-grupo h1{
+        text-align: center;
+    }
+    .cont-proyecto figure,
+    .cont-proyecto div{
+        width: 100%;
+    }
+    .cont-proyecto figure{
+        height: 250px;
+    }
+    .cont-mis{
+		width: 100%;
+	}
+	.cont-mis:last-child{
+		width: 100%;
+    }
+    .img-person,
+    .info-person{
+        width: 100%;
+    }
+    .info-person{
+        padding-left: 0;
+        padding-right: 0;
+        p{
+           text-align: left;
+        }
+    }
+    .order{
+        order: 1;
+    }
+    .info-person h2{
+        text-align: center;
+    }
+    .bannerno{
+        height: 70vh;
+    }
+    .redes-person{
+        justify-content: center;
+    }
+    .cont-formulraio,
+    .cont-info-formulario{
+        width: 100%;
+    }
+    .book-content{
+        min-width: 250px;
+        max-width: 400px;
+        height: 230px;
+    }
+    .trnsf{
+        transform: translateX(40px);
+    }
+}

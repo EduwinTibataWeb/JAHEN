@@ -1,0 +1,423 @@
+.slider{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    li{
+        width: 100%;
+        height: 100%;
+    }
+}
+.caption{
+    width: 100%;
+    height: 100%;
+    & > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(70%);
+    }
+}
+.pagination{
+    z-index: 10;
+    position: absolute;
+    bottom: 5%;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    animation: frombottom 1.5s;
+    li{
+        background-color: #EBEBEB;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin: 0.5em;
+        cursor: pointer;
+        transition: all .3s ease-in;
+        &:hover{
+            background-color: rgb(187, 179, 179);
+            transform: scale(1.1);
+        }
+    }
+}
+.left,
+.right{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 50px;
+    color: #EBEBEB;
+    z-index: 100;
+    i{
+        transition: all .3s ease-out;
+        &:hover{
+            color: #3bbbd9;
+        }
+    }
+}
+.left{
+    left: .5em;
+    i{
+        animation: fromleft 1.5s;
+    }
+}
+.right{
+    right: .5em;
+    i{
+        animation: fromright 1.5s;
+    }
+}
+.personas{
+    position: absolute;
+    right: 1em;
+    bottom: -70%;
+}
+.grupo{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #e9e9e9;
+}
+.img-grupo,
+.info-grupo{
+    width: 50%;
+}
+.img-grupo{
+    @include flex-center;
+    transition: all 1s ease-out;
+    img{
+        width: 80%;
+    }
+}
+.info-grupo{
+    @include flex-center;
+    flex-direction: column;
+    text-align: justify;
+    transition: all 1s ease-out;
+    h1{
+        width: 100%;
+    }
+}
+.parallax{
+    background-image: url("../assets/img/fondo.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    transition:  all .1s ease;
+    background-blend-mode: darken;
+    background-color: rgba($color: #000000, $alpha: .5)
+}
+.proyecto{
+    h2, p{
+        text-align: center;
+        color: #ffff;
+    }
+}
+.cont-proyecto{
+    display: flex;
+    padding-top: 5em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    figure, div{
+        width: 33%;
+    }
+    figure{
+        height: 500px;
+        overflow: hidden;
+        box-shadow: 1px 18px 47px -14px rgba(0,0,0,0.49);
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+}
+.info-proyecto{
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column; 
+}
+.info-proyecto p{
+    text-align: justify;
+    padding: 1em;
+    span{
+        color: #3bbbd9;
+        font-size: 1em;
+    }
+}
+.cont-teaser{
+    @include flex-center;
+    video{
+        width: 90%;
+        box-shadow: 0px 14px 35px -14px rgba(0,0,0,0.75);
+    }
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    @include flex-center;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: .5);
+    img{
+        max-width: 700px;
+        width: 90%;
+        position: relative;
+    }
+}
+#modal__boton{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    font-size: 2.5em;
+    color: #ffff;
+    transition: all .3s ease-out;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+        color: #3bbbd9;
+    }
+}
+.about{
+    transition: all 1s ease-out;
+}
+.fromleft{
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all .3s;
+}
+.frombottom{
+    transform: translateY(200px);
+    opacity: 0;
+    transition: all .3s;
+}
+.ficha-tecnica{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+.fondo-personas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.info-ficha{
+    z-index: 10;
+    padding: 7em 10%;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 26%, rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    color: #ffffff;
+    position: relative;
+    h1{
+        font-size: 4em;
+        margin: 0;
+        padding: 1em 0 .2em;
+    }
+    p{
+        width: 100%;
+        text-align: justify;
+        max-width: 600px;
+    }
+    h2{
+        padding-top: 1em;
+        cursor: pointer;
+        display: inline-block;
+        i{
+            padding-right: .4em;
+            transform: rotate(-90deg) translateX(25%);
+            transition: all .3s;
+        }
+        .active-icon{
+            transform: rotate(0deg) translateX(0);
+        }
+    }
+}
+.mor-info{
+    padding-bottom: 1em;
+    p span:first-child{
+        padding-right: 1em;
+    }
+    p span:last-child{
+        margin-left: 1em;
+        border: 1px solid #ffffff;
+        font-size:1em;
+        padding: 2px 3px;
+    }
+}
+.capitulos{
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    li a{
+        padding: .5em 2em;
+        color: #ffffff;
+        display: inline-block;
+        &:hover{
+            color: aqua;
+        }
+    }
+}
+.active-capitulos{
+    max-height: 300px;
+}
+.play{
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    a{
+        color: #ffffff;
+        font-size: 3em;
+    }
+}
+.juega{
+    @include flex-center;
+    flex-direction: column;
+    img{
+        position: absolute;
+    }
+    h2,
+    button{
+        z-index: 10;
+    }
+    h2{
+        color: #ffffff;
+        font-size: 4em;
+        margin: 0;
+        padding: 1em 0 .2em;
+        text-align: center;
+    }
+    button{
+        outline: none;
+        background: none;
+        border: 1px solid #ffff;
+        border-radius: .2em;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+        transition: all .3s ease;
+        display: block;
+        color: #ffff;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        &:hover{
+            border: 1px solid rgb(13, 186, 255);
+            transform: scale(1.2);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+        }
+        a{
+            color: #ffffff;
+            display: block;
+            padding: 1em 2em;
+        }
+    }
+}
+.biblia{
+    padding: 5em 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    h2{
+        width: 100%;
+        text-align: center;
+        padding: 0 0 2em;
+    }
+}
+.cont-all-biblia{
+    flex-wrap: wrap;
+    width: 60%;
+}
+.cont-descarga{
+    z-index: 2;
+    width: 40%;
+}
+.cont-all-biblia{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.book-content{
+	width: 100%;
+	max-width: 728px;
+	height: 500px;
+	position: relative;
+	perspective: 1000px;
+    transition: 1s;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.book{
+    cursor: pointer;
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	transition: 1s;
+	transform-style: preserve-3d;
+    transform-origin: left; 
+    box-shadow: 0px 18px 21px -57px rgba(0,0,0,0.75);
+
+}
+.face-front, .face-back{
+	width: 100%;
+	height: 100%;
+	background: white;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.face-front{
+	box-shadow: inset 3px 0px 20px -7px black;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.face-back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateZ(-1px) rotateY(180deg);
+	box-shadow: inset -3px 1px 20px -7px black;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.face-back img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+.face-front img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+}
+#portada{
+	background: url('../assets/img/1.jpg');
+}
+#portada-back{
+	background: url('../assets/img/1.jpg');
+}
+#portada, #portada-back{
+	background-size: 100% 100%;
+}
+
+/* Clases que se agregaran con Javascript */
+.trnsf{
+	transform: translateX(150px);
+}
+.trnsf-reset{
+	transform: translateX(0px);
+}

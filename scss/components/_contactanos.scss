@@ -1,0 +1,210 @@
+.texto-form{
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    color: #ffffff;
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: kenburns-top 5s ease-out both;
+    }
+}
+.info-form{
+    @include flex-center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .5);
+    flex-direction: column;
+    h1{
+        text-align: center;
+        position: relative;
+        padding: .2em 2em;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            background-color: #ffffff;
+            width: 100%;
+            height: 1px;
+            border-radius: .5px;
+            bottom: 0;
+            animation: crecer 1s ;
+        }
+    }
+    p{
+        text-align: center;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+.cont-all-formulario{
+    display: flex;
+    padding: 3em 5%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cont-formulraio,
+.cont-info-formulario{
+    width: 50%;
+    padding: 2em 5%;
+    
+}
+.cont-formulraio{
+    background-color: #fff;
+    box-shadow: 27px 25px 25px -17px rgba(0,0,0,0.75);
+}
+.name{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    margin: 1em 0;
+    input{
+        width: 100%;
+        height: 100%;
+        color: #000000;
+        padding-top: 20px;
+        border: none;
+        background: none;
+        outline: none;
+        &:focus + .label-name .cont-name, 
+        &:valid + .label-name .cont-name{
+            transform: translateY(-150%);
+            font-size: 14px;
+            color: #000000;
+        }
+    }
+    label{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid black;
+        &::after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            border-bottom: 3px solid #000000;
+            transform: translateX(-100%);
+            transition: transform .3s ease-out;
+        }
+    }
+}
+.cont-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all .3s ease-out;
+}
+.name input:focus + .label-name::after, 
+.name input:valid + .label-name::after{
+    transform: translateX(0);
+}
+.tarea{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    textarea{
+        width: 100%;
+        height: 100%;
+        color: #000000;
+        border: none;
+        background: none;
+        outline: none;
+        &:focus + .label-name .cont-name{
+            transform: translateY(-150%);
+            font-size: 14px;
+            color: #000000;
+        }
+    }
+    label{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid black;
+        &::after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            border-bottom: 3px solid #000000;
+            transform: translateX(-100%);
+            transition: transform .3s ease-out;
+        }
+    }
+}
+.tarea textarea:focus + .label-name::after{
+    transform: translateX(0);
+}
+[type="submit"]{
+    background: none;
+    margin-top: 1em;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 2em 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:hover{
+        background-color: #dadada;
+        transform: scale(1.1);
+    }
+}
+.redes-person2{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 1em;
+    a{
+        color: #000000;
+        transition: all .3s ease-out;
+        @include flex-center;
+        width: 40px;
+        height: 40px;
+        background-color: #f1f1f1;
+        margin-right: 1em;
+        border-radius: 50%;
+        &:last-child{
+            margin-right: 0;
+        }
+        &:hover{
+            transform: scale(1.2);
+            color: #fff;
+            box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.50);
+            &:first-child{
+                background: #f09433; 
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+            }
+            &:nth-child(2){
+                background-color: #3b5998;
+            }
+            &:last-child{
+                background-color: #c4302b;
+            }
+        }
+    }
+}
+.item-form{
+    padding: 1em;
+    margin: 1em 0;
+}

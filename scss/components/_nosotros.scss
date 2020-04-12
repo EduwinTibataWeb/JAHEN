@@ -1,0 +1,214 @@
+.bannerno{
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-image: url("../assets/img/fondo1.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+.cont-banner{
+    @include flex-center;
+    flex-direction: column;
+    padding: 0 10%;
+    height: 100%;
+    color: #ffffff;
+    background-color: rgba($color: #000000, $alpha: .5);
+    text-align: center;
+    h1{
+        position: relative;
+        padding: .2em 2em;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            background-color: #ffffff;
+            width: 100%;
+            height: 1px;
+            border-radius: .5px;
+            bottom: 0;
+            animation: crecer 1s ;
+        }
+    }
+}
+.cont-vis-mis{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    padding-bottom: 4em;
+    animation: frombottom 1s;
+}
+.cont-mis{
+	width: 50%;
+	border: .5px solid #CBCBCB;
+	position: relative;
+    &:last-child{
+        width: 100%;
+    }
+    i{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -10%;
+        font-size: 2em;
+        @include flex-center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: .5px solid #CBCBCB;
+        background-color: #fff;
+    }
+}
+.cont-mis-text{
+	padding: 2em 1.5em 2em 1.5em;
+}
+.cont-nosotros{
+    width: 100%;
+    overflow: hidden;
+}
+.item-nosotros{
+    padding: 2% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 1s ease-out;
+    background-image: url('../assets/img/fondo-black.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-person{
+    width: 30%;
+    @include flex-center;
+    img{
+        width: 80%;
+    }
+}
+.info-person{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 2em;
+    h2{
+        color: #fff;
+        padding-bottom: 1em;
+        span:first-child{
+            font-size: 2em;
+            display: block;
+        }
+        span:last-child{
+            padding-bottom: 4em;
+        }
+    }
+    p{
+        color: #fff;
+        text-align: justify;
+    }
+}
+button.active-info{
+    border: none;
+    background-color: rgba($color: #fff, $alpha: 0);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    position: relative;
+    display: inline-block;
+    padding: .5em 0;
+    margin-bottom: 1em;
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: #ffff;
+        left: 50%;
+        bottom: 0;
+        transform: translateY(10px);
+        opacity: 0;
+        transition: all .3s;
+    }
+    &:hover::after{
+        width: 100%;
+        left: 0;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    &:focus{
+        outline:none;
+    }
+}
+
+.oculto{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}.oculto2{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}.oculto3{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}.oculto4{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}.oculto5{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}
+.mostrarmas{
+    max-height: 100px;
+}
+.redes-person{
+    font-size: 1.5em;
+    display: flex;
+    justify-content: flex-start;
+    a{
+        color: #000000;
+        transition: all .3s ease-out;
+        @include flex-center;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        margin-right: 1em;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.50);
+        &:last-child{
+            margin-right: 0;
+        }
+        &:hover{
+            transform: scale(1.2);
+            color: #fff;
+            box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.50);
+            &:first-child{
+                background: #f09433; 
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+            }
+            &:nth-child(2){
+                background-color: #3b5998;
+            }
+            &:last-child{
+                background-color: #c4302b;
+            }
+        }
+    }
+}
+[class*="itm"]{
+    transition: all 1s ease-out;
+}
+.item-person{
+    transition: all 1s ease-out;
+    transform: translate(-500px);
+    opacity: 0;
+}
+.item-person2{
+    transition: all 1s ease-out;
+    transform: translate(500px);
+    opacity: 0;
+}
