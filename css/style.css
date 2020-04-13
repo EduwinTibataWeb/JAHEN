@@ -763,8 +763,8 @@ nav.dark {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  -webkit-filter: saturate(70%);
-  filter: saturate(70%);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
 }
 
 .pagination {
