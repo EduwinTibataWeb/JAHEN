@@ -17,20 +17,22 @@ $(document).ready(function(){
 	var portada = document.querySelectorAll('#portada');
 	var contZindex = 2;
 	var customZindex = 1;
-	
+	var nPagina = 1;
+	$('.book').hide();
+	$('.book:nth-child('+ nPagina +')').show();
+	$('.book:nth-child('+ nPagina +')').show();
 	for (var i = 0; i < uno.length; i++) {
 		uno[i].style.zIndex = customZindex;
 		customZindex--;
-	
 		uno[i].addEventListener('click', function(e){
-	
 			var tgt = e.target;
 			var unoThis = this;
-	
 			unoThis.style.zIndex = contZindex;
 			contZindex++;
-	
 			if (tgt.getAttribute('class') == 'face-front') {
+				nPagina++;
+				nPagina += 1;
+				$('.book:nth-child('+ nPagina +')').show();
 				unoThis.style.zIndex = contZindex;
 				contZindex +=20;
 				setTimeout(function(){
@@ -45,7 +47,7 @@ $(document).ready(function(){
 					unoThis.style.transform = 'rotateY(0deg)';
 				}, 500);
 			}
-	
+			
 			if (tgt.getAttribute('id') == 'portada') {
 				flip.classList.remove("trnsf-reset");
 				flip.classList.add("trnsf");

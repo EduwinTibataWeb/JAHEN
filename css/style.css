@@ -1206,6 +1206,8 @@ nav.dark {
 }
 
 .juega img {
+  left: 0;
+  bottom: 0;
   position: absolute;
 }
 
@@ -1266,18 +1268,24 @@ nav.dark {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  background-image: url("../assets/img/portada.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .biblia h2 {
   width: 100%;
   text-align: center;
   padding: 0 0 2em;
+  color: #fff;
 }
 
 .cont-all-biblia {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 60%;
+  width: 100%;
 }
 
 .cont-descarga {
@@ -1380,11 +1388,11 @@ nav.dark {
 }
 
 #portada {
-  background: url("../assets/img/1.jpg");
+  background: url("../assets/img/Biblia trasmedia-01.jpg");
 }
 
 #portada-back {
-  background: url("../assets/img/1.jpg");
+  background: url("../assets/img/Biblia trasmedia-86.jpg");
 }
 
 #portada, #portada-back {
@@ -1402,6 +1410,14 @@ nav.dark {
   -webkit-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
+}
+
+.ver-biblia {
+  padding-top: 2em;
+}
+
+.ver-biblia a {
+  color: #EBEBEB;
 }
 
 /*The-end-of-index.html*/
@@ -2408,7 +2424,7 @@ button.active-info:focus {
   .book-content {
     min-width: 250px;
     max-width: 400px;
-    height: 230px;
+    height: 250px;
   }
   .trnsf {
     -webkit-transform: translateX(40px);

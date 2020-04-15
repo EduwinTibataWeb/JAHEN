@@ -287,6 +287,8 @@
     @include flex-center;
     flex-direction: column;
     img{
+        left: 0;
+        bottom: 0;
         position: absolute;
     }
     h2,
@@ -330,15 +332,21 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    background-image: url('../assets/img/portada.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     h2{
         width: 100%;
         text-align: center;
         padding: 0 0 2em;
+        color: #fff;
     }
 }
 .cont-all-biblia{
     flex-wrap: wrap;
-    width: 60%;
+    width: 100%;
 }
 .cont-descarga{
     z-index: 2;
@@ -405,10 +413,10 @@
 	pointer-events: none;
 }
 #portada{
-	background: url('../assets/img/1.jpg');
+	background: url('../assets/img/Biblia trasmedia-01.jpg');
 }
 #portada-back{
-	background: url('../assets/img/1.jpg');
+	background: url('../assets/img/Biblia trasmedia-86.jpg');
 }
 #portada, #portada-back{
 	background-size: 100% 100%;
@@ -420,4 +428,10 @@
 }
 .trnsf-reset{
 	transform: translateX(0px);
+}
+.ver-biblia{
+    padding-top: 2em;
+    a{
+        color: #EBEBEB;
+    }
 }
