@@ -28,6 +28,9 @@
     .trnsf{
         transform: translateX(120px);
     }
+    #boton-whatsapp{
+        display: none;
+    }
 }
 @media screen and (max-width: 770px){
     .play{

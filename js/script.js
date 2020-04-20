@@ -10,6 +10,9 @@ $(document).ready(function(){
             $('nav').removeClass('dark');
         }
 	});
+	$('#closeAllWhat').on('click', function(){
+		$(".all-whatsapp").css('display', 'none');
+	});
 	var front = document.querySelector('.face-front');
 	var back = document.querySelector('.face-back');
 	var flip = document.querySelector('.book-content');
@@ -194,6 +197,57 @@ $(document).ready(function(){
 			if ( documentEl.scrollTop() > aboutElOffset3 && aboutEl3.hasClass('frombottom') ) aboutEl3.removeClass('frombottom');
 		});
 	})();
+});
+$(document).ready(function(){
+	var getWhatsapp = $('#boton-whatsapp');
+	var getWhatsappContent = $('.cont-all-wa');
+	var getCloseBoton = $('#closeChat');
+	getWhatsapp.on('click', function(){
+		getWhatsappContent.toggleClass('active_whatsapp');
+	});
+	getCloseBoton.on('click', function(){
+		getWhatsappContent.removeClass('active_whatsapp');
+	});
+
+	/*Funcion Para el chatBox*/
+	var celular = '573232812574'; //Su celular xd;
+	var mensaje = 'Ayuda'; //Mensaje predeterminado;
+	var getMensajes = $('.cont-mensaje');
+	var getInput = document.querySelector('#mensajeWa');
+	var getEnviar = document.querySelector('#enviar');
+	var stringIn = '';
+	var stringOut = '';
+	getEnviar.addEventListener('click', clickWhatsapp, false);
+	window.addEventListener('keyup', e => {
+		if(e.key === 'Enter') getEnviar.click();
+		if(e.key === 'Escape') getEnviar.click();
+	});
+	function clickWhatsapp(){
+		stringIn = getInput.value;
+		getMensajes.append('<p class="cont-usuario-mensaje">'+ stringIn +'</p>');
+		function abrirNuevoTab(url) {
+			var win = window.open(url, '_blank');
+			win.focus();
+		}
+		if(stringIn === "si" || stringIn === "Si" || stringIn === "SI"){
+			abrirNuevoTab('http://wa.me/'+ celular +'?text='+ encodeURI(mensaje));
+		}else if(stringIn === "no" || stringIn === "No" || stringIn === "NO"){
+			stringOut = "Puedes comunicarte via email JAHENmutimedi@gmail.com";
+		}else if(stringIn.includes('Web') || stringIn.includes('pagina') || stringIn.includes('Pagina') || stringIn.includes('web')){
+			stringOut = "Eduwin Tibata es el encargado de la parte web, comunicate con el via gmail:<br>Eduwintibata@hotmail.com";
+		}else if(stringIn.includes('ilustracion') || stringIn.includes('ILUSTRACION') || stringIn.includes('Ilustracion') || stringIn.includes('dibujo')){
+			stringOut = "Eduwin Tibata es el encargado de la parte de ilustración, comunicate con el via gmail:<br>Eduwintibata@hotmail.com";
+		}else if(stringIn.includes('Marketing') || stringIn.includes('marketing') || stringIn.includes('MARKETING') || stringIn.includes('publicidad')){
+			stringOut = "Nicole Gomez es la encargada de marketing, comunicate con ella via cel: 3232812574";
+		}else{
+			stringOut = "mensaje invalido";
+			mensaje = stringIn;
+			abrirNuevoTab('http://wa.me/'+ celular +'?text='+ encodeURI(mensaje));
+		}
+		getMensajes.append('<p class="cont-robot-mensaje">'+ stringOut +'</p>');
+		getInput.value = "";
+		getInput.focus();
+	}
 });
 (function() {
 	var aboutEl = $('div.itm1');
