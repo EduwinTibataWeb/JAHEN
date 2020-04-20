@@ -19,8 +19,7 @@ $(document).ready(function(){
 	var customZindex = 1;
 	var nPagina = 1;
 	$('.book').hide();
-	$('.book:nth-child('+ nPagina +')').show();
-	$('.book:nth-child('+ nPagina +')').show();
+	$('.book:nth-child(1)').show();
 	for (var i = 0; i < uno.length; i++) {
 		uno[i].style.zIndex = customZindex;
 		customZindex--;
@@ -38,11 +37,12 @@ $(document).ready(function(){
 				setTimeout(function(){
 					unoThis.style.transform = 'rotateY(-180deg)';
 				}, 500);
+				$('.book:nth-child('+ (nPagina - 2)+')').show();
+				$('.book:nth-child('+ (nPagina - 1)+')').show();
 			}
 			if (tgt.getAttribute("class") == 'face-back') {
 				unoThis.style.zIndex = contZindex;
 				contZindex +=20;
-	
 				setTimeout(function(){
 					unoThis.style.transform = 'rotateY(0deg)';
 				}, 500);

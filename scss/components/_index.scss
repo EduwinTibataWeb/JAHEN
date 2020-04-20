@@ -93,7 +93,7 @@
 .info-grupo{
     @include flex-center;
     flex-direction: column;
-    text-align: justify;
+    text-align: left;
     transition: all 1s ease-out;
     h1{
         width: 100%;
@@ -141,7 +141,7 @@
     flex-direction: column; 
 }
 .info-proyecto p{
-    text-align: justify;
+    text-align: left;
     padding: 1em;
     span{
         color: #3bbbd9;
@@ -226,7 +226,7 @@
     }
     p{
         width: 100%;
-        text-align: justify;
+        text-align: left;
         max-width: 600px;
     }
     h2{
@@ -337,6 +337,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-color: rgba(0,0,0,0.50);
+    background-blend-mode: darken;
     h2{
         width: 100%;
         text-align: center;

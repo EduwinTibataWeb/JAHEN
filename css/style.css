@@ -901,7 +901,7 @@ nav.dark {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-align: justify;
+  text-align: left;
   -webkit-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
   transition: all 1s ease-out;
@@ -972,7 +972,7 @@ nav.dark {
 }
 
 .info-proyecto p {
-  text-align: justify;
+  text-align: left;
   padding: 1em;
 }
 
@@ -1110,7 +1110,7 @@ nav.dark {
 
 .info-ficha p {
   width: 100%;
-  text-align: justify;
+  text-align: left;
   max-width: 600px;
 }
 
@@ -1273,6 +1273,8 @@ nav.dark {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 }
 
 .biblia h2 {
@@ -1591,7 +1593,7 @@ nav.dark {
 
 .info-person p {
   color: #fff;
-  text-align: justify;
+  text-align: left;
 }
 
 button.active-info {
