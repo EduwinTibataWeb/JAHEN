@@ -1192,15 +1192,15 @@ nav.dark {
 .cont-proyecto figure {
   height: 500px;
   overflow: hidden;
-  -webkit-box-shadow: 1px 18px 47px -14px rgba(0, 0, 0, 0.49);
-  box-shadow: 1px 18px 47px -14px rgba(0, 0, 0, 0.49);
 }
 
 .cont-proyecto figure img {
+  -webkit-box-shadow: 1px 18px 47px -14px rgba(0, 0, 0, 0.49);
+  box-shadow: 1px 18px 47px -14px rgba(0, 0, 0, 0.49);
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .info-proyecto {
@@ -1264,8 +1264,13 @@ nav.dark {
 
 .modal img {
   max-width: 700px;
+  max-height: 700px;
   width: 90%;
   position: relative;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -webkit-animation: scale-in-center1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center1 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #modal__boton {
@@ -2631,6 +2636,32 @@ button.active-info:focus {
   }
 }
 
+@-webkit-keyframes scale-in-center1 {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center1 {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .cont-proyecto figure {
     width: 50%;
@@ -2757,6 +2788,9 @@ button.active-info:focus {
   }
   .info-grupo h1 {
     text-align: center;
+  }
+  .cont-proyecto {
+    padding-top: 2em;
   }
   .cont-proyecto figure,
   .cont-proyecto div {
